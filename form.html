@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+     <title> registration</title>
+  </head>
+  <body>
+      <form name=registration form >
+      <label for="name">username:</label>
+             <input type="text" placeholder="enter your name" name="username">
+        <br>
+        <label for="password">password:</label>
+        <input type="password" placeholder="enter your pwd" name="password">
+         <br> 
+         <label for="confirm password">confirm password:</label>
+             <input type="password" placeholder="enter your pwd" name="confirm password">
+        <br> 
+         <label for="email">email:</label>
+         <input type="email" placeholder="enter your email" name="email">
+          <br>
+          <label for="phno">phone number:</label>
+             <input type="text" placeholder="enter your pno" name="phno">
+           <br>
+        </form>
+        <script>
+            document.getElementById('registration form').addEventListener('submit',function(event))
+             {
+                 var form=event.target;
+                 var password=form.password.value;
+                 var confirmpassword=form.confirmpassword.value;
+                 if(password!==confirmpassword)
+                 {
+                     event.preventDefault();
+                     alert('password is not match');
+                     return;
+                 }
+                 var email=form.email.value;
+                 if(!email.notendswith('@gmail.com')){
+                     event.preventDefault();
+                     document.getElementById('email error').style.display='block';
+                     return;
+
+                 }
+                 event.PreventDefault();
+                 document.getElementId('message').style.display='block';
+                 document.getElementByElementId('emailerror').style.display="none";
+                 form.reset();
+              });
+        </script>
+  </body>   
